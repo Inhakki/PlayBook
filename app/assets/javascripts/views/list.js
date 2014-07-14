@@ -4,12 +4,16 @@ define(function(require){
   var Backbone = require('backbone');
   var albumpages = require('../models/albumpages');
 
-  var AlbumPagesItemView = Backbone.View.extend({
+  var PagesItemView = Backbone.View.extend({
     tagName: 'li',
 
     initialize: function(){
       this.listenTo(this.model, 'change', this.render);
       this.render();
+    },
+
+    render: function(){
+      this.$el.html('<a href="#' + this.model.get('id') + '">' + "sample title" + '</a>');
     }
   });
 
@@ -25,7 +29,14 @@ define(function(require){
       var list = document.createDocumentFragment();
 
       this.collection.each(function(model){
+        var item = new PagesItemView({ model: model});
+        item.render();
+        list.appendChild(item.el);
       });
+
+      return this.$el.html(list);
     }
   });
+
+  return new AlbumPagesView({collection: albumpages});
 });

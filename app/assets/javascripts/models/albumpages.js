@@ -5,7 +5,7 @@ define(function(require) {
 
   var Page = Backbone.Model.extend({
     defaults: {
-      summary: '',
+      story: '',
       video_url: '',
       audio_url: ''
     }
