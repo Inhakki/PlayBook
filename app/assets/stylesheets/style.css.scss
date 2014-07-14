@@ -1,0 +1,34 @@
+body{
+  margin: 0;
+  font-family: futura, helvetica, sans-serif;
+
+  .navbar {
+    background-color: rgba(33,33,33,.5);
+    padding: 10px;
+
+    a{
+      color: rgba(200,100,155,1);
+      text-decoration: none;
+    }
+
+    ul li{
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    li:last-child{
+      float: right;
+      margin-top: -20px;
+    }
+  }
+
+  .title{
+    font-weight: bolder;
+    font-size: 40px;
+  }
+
+  .main {
+    margin: 30px;
+  }
+
+}

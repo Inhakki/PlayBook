@@ -3,12 +3,21 @@
 <head>
   <title>PlayBook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar">
+    <ul>
+      <%= render 'common/signout' %>
+      <%= render 'common/navbar' %>
+    </ul>
+  </div>
 
-<%= yield %>
+  <div class="main" role="main">
+    <%= yield %>
+  </div>
+
+
 
 </body>
 </html>

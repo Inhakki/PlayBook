@@ -1,0 +1,8 @@
+<ul class="album-pages" id="album-pages"></ul>
+
+
+  <%= requirejs_include_tag %>
+<script>
+  require.config({urlArgs: 'bust='+ Date.now()});
+  require(['main']);
+</script>

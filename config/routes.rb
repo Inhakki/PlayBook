@@ -4,6 +4,21 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'albums#index'
+
+  resources :users, except: [:index] do
+    resources :albums
+  end
+
+  resources :albums do
+    resources :pages, except: [:show]
+  end
+
+  resources :sessions, only: [:create]
+
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  delete 'signout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

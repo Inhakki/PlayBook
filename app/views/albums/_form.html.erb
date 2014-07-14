@@ -1,0 +1,12 @@
+<p><%= form_for [@user, @album] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, id: 'Playbook Title' %>
+
+  <%= f.label :style %>
+  <%= f.select :style, options_for_select([['Stylish', 'stylish'], ['Comic Book', 'comic'], ['Space', 'space'], ['Dark', 'dark']], id: 'Styles for text') %>
+
+  <%= f.label :user_id %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+
+  <%= f.submit 'Submit', id: 'submit' %>
+<% end %></p>

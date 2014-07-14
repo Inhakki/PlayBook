@@ -1,0 +1,11 @@
+<h1>Hello world</h1>
+<% @albums.each do |album| %>
+  <li>
+    <%= link_to "#{album.title}", album_path(album) %>
+    <% if @current_user == @album_user %>
+<!--       < form_for album, method: delete do |f| >
+        < f.submit "delete this PlayBook?" >
+      < end > -->
+    <% end %>
+  </li>
+<% end %>
