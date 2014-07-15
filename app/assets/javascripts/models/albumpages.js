@@ -8,23 +8,14 @@ define(function(require) {
       story: '',
       video_url: '',
       audio_url: ''
-    }
+    },
   });
 
   var Pages = Backbone.Collection.extend({
-      model: Page,
-      url: function() {
-        return window.location.pathname + "/pages";
-      }
+    model: Page,
+    url: function() {
+      return window.location.pathname + "/pages";
+    },
   });
-
-  // var Album = Backbone.Model.extend({
-
-  //   initialize: function(){
-  //     this.pages = new Pages;
-  //     this.pages.url = '/album/' + this.id + '/pages';
-  //   }
-
-  // });
   return new Pages();
 });

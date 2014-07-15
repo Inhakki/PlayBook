@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :albums do
-    resources :pages, except: [:show]
+    resources :pages
   end
 
   resources :sessions, only: [:create]

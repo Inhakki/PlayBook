@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @pages = Page.all
+    @pages = Album.find(params[:album_id]).pages.all
 
     if @pages
       render json: @pages

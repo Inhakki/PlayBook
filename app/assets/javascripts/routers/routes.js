@@ -8,22 +8,25 @@ define(function(require){
   var PagesRouter = Backbone.Router.extend({
     routes: {
       ':id' : 'page',
-      '*default' : 'page'
+      '*default' : 'titlePage'
     },
 
     page: function(id){
+      console.log("the id is " + id)
       if(this.view) {
         this.view.remove();
       }
 
-      if (!id) {
-        id = pages.at(0).get('story');
-        this.navigate(id);
-      }
+      var page = pages.findWhere({ id: parseInt(id) });
+      this.view = new PageDetailView({ model: page });
+      this.view.render().appendTo('#page-detail');
+    },
 
-      var page = pages.findWhere({story: id});
-      this.view = new PageDetailView({model: page});
-      this.view.render().appendTo('#page-detail')
+    titlePage: function(){
+      id = pages.at(0).get('id');
+      this.navigate(id);
     }
   });
+
+  return new PagesRouter();
 });

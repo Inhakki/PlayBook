@@ -6,18 +6,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar">
-    <ul>
-      <%= render 'common/signout' %>
-      <%= render 'common/navbar' %>
-    </ul>
+  <div id="wrapper">
+    <div class="navbar">
+      <ul>
+        <%= render 'common/signout' %>
+        <%= render 'common/navbar' %>
+      </ul>
+    </div>
+
+    <div class="main" role="main">
+      <%= yield %>
+    </div>
   </div>
-
-  <div class="main" role="main">
-    <%= yield %>
-  </div>
-
-
 
 </body>
 </html>

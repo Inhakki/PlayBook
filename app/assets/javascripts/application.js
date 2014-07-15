@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui.1.10.4
+//= require jquery-ui.1.10.4
+//= require jquery.tubular.1.0
+//= require jquery-readyselector
 //= require_directory

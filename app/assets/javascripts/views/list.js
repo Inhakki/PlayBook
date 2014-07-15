@@ -1,8 +1,8 @@
 define(function(require){
 
-  console.log("list ready")
+  console.log("list ready");
   var Backbone = require('backbone');
-  var albumpages = require('../models/albumpages');
+  var albumPages = require('../models/albumpages');
 
   var PagesItemView = Backbone.View.extend({
     tagName: 'li',
@@ -13,7 +13,10 @@ define(function(require){
     },
 
     render: function(){
-      this.$el.html('<a href="#' + this.model.get('id') + '">' + "sample title" + '</a>');
+      this.$el.html('<a href="#' + this.model.get('id') + '">' + '&times' + '</a>');
+      // if(this.model.get(parseInt('id') + 1) === null ){
+      //   this.$el.html('<li id="pageadder"> + </div>');
+      // }
     }
   });
 
@@ -38,5 +41,5 @@ define(function(require){
     }
   });
 
-  return new AlbumPagesView({collection: albumpages});
+  return new AlbumPagesView({ collection: albumPages });
 });
