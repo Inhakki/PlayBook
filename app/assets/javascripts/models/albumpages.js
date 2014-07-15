@@ -15,7 +15,7 @@ define(function(require) {
     model: Page,
     url: function() {
       return window.location.pathname + "/pages";
-    },
+    }
   });
   return new Pages();
 });

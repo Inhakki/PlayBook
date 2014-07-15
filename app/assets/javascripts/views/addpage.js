@@ -19,6 +19,7 @@ define(function(require){
     },
 
     createPage: function(evt){
+      debugger
       evt.preventDefault();
       var title = this.$('[name="title"]').val();
       var story = this.$('[name="story"]').val();

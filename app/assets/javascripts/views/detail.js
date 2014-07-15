@@ -9,7 +9,7 @@ define(function(require){
     template: _.template( templateText ),
 
     render: function(){
-      var $wrapper = $('#wrapper');Í
+      var $wrapper = $('#wrapper');
       var url = this.model.get('video_url');
       $wrapper.tubular({
         videoId: url
