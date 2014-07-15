@@ -10,6 +10,9 @@ class PagesController < ApplicationController
     end
   end
 
+  def create
+  end
+
   def show
     @page = Pages.find(params[:id])
 
