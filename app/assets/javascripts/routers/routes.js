@@ -7,6 +7,7 @@ define(function(require){
 
   var PagesRouter = Backbone.Router.extend({
     routes: {
+      '#add' : 'pageAdder',
       ':id' : 'page',
       '*default' : 'titlePage'
     },
@@ -25,6 +26,11 @@ define(function(require){
     titlePage: function(){
       id = pages.at(0).get('id');
       this.navigate(id);
+    },
+
+    pageAdder: function(){
+      this.view = new AddPageView({collection: pages});
+      this.view.render().appendTo('#page-detail');
     }
   });
 

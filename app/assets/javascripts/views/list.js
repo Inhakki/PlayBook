@@ -1,6 +1,5 @@
 define(function(require){
 
-  console.log("list ready");
   var Backbone = require('backbone');
   var albumPages = require('../models/albumpages');
 
@@ -14,9 +13,9 @@ define(function(require){
 
     render: function(){
       this.$el.html('<a href="#' + this.model.get('id') + '">' + '&times' + '</a>');
-      // if(this.model.get(parseInt('id') + 1) === null ){
-      //   this.$el.html('<li id="pageadder"> + </div>');
-      // }
+      if( !this.model.get(parseInt('id') + 1) ){
+        this.$el.append('<a href="#add"> + </li>');
+      }
     }
   });
 
@@ -24,20 +23,24 @@ define(function(require){
     el: '.album-pages',
 
     initialize: function(){
-      this.listenTo(this.collection, 'sync reset', this.render);
+      this.listenTo(this.collection, 'sync reset add', this.render);
       this.render();
     },
 
     render: function(){
       var list = document.createDocumentFragment();
 
-      this.collection.each(function(model){
-        var item = new PagesItemView({ model: model});
-        item.render();
-        list.appendChild(item.el);
-      });
+      if(this.collection.length <= 0){
+        var item = new AddPageView();
+      } else {
+        this.collection.each(function(model){
+          var item = new PagesItemView({ model: model});
+          item.render();
+          list.appendChild(item.el);
+        });
 
-      return this.$el.html(list);
+        return this.$el.html(list);
+      }
     }
   });
 

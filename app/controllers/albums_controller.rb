@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.create(album_params)
-    render :show
+    redirect_to @album
   end
 
   def show
