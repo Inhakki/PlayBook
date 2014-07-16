@@ -9,23 +9,20 @@ define(function(require){
   var PageDetailView = Backbone.View.extend({
     template: _.template( templateText ),
 
-    events:{
-      'click' : 'render'
-    },
-
     render: function(){
       console.log("tubular is rendered");
       var url = this.model.get('video_url');
-      var $wrapper = $('#wrapper');
-      $wrapper.tubular({
-        videoId: url
-      });
+      console.log(url);
+      window.setTimeout( function(){
+        player.loadVideoById({'videoId' : url})
+      }, 2000);
       var rendered = this.template(this.model.toJSON());
       return this.$el.html(rendered);
     },
 
     initialize: function(){
       console.log('init works');
+      this.listenTo(this.model, 'route sync', this.render);
       this.render();
     }
   });
