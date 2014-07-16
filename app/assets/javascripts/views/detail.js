@@ -10,18 +10,20 @@ define(function(require){
     template: _.template( templateText ),
 
     render: function(){
-      var $wrapper = $('#wrapper');
+      console.log("tubular is rendered");
       var url = this.model.get('video_url');
-      $wrapper.tubular({
-        videoId: url
-      });
+      console.log(url);
+      window.setTimeout( function(){
+        player.loadVideoById({'videoId' : url})
+      }, 2000);
       var rendered = this.template(this.model.toJSON());
       return this.$el.html(rendered);
     },
 
     initialize: function(){
       console.log('init works');
-      // this.render();
+      this.listenTo(this.model, 'route sync', this.render);
+      this.render();
     }
   });
 
