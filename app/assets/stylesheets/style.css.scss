@@ -1,5 +1,5 @@
 body{
-  // background-image: url("http://i.imgur.com/FTIo0K0.gif");
+  //background-image: url("http://i.imgur.com/FTIo0K0.gif");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,13 +8,51 @@ body{
   margin: 0;
   font-family: futura, helvetica, sans-serif;
 
-  .navbar {
-    background-color: rgba(254,254,254,.5);
+  #page-detail{
+    background-color:rgba(244,244,244,.6);
+    bottom: 0;
+    padding: 20px;
+    position: fixed;
+    border-radius: 10px;
+    width: 25%;
+  }
+
+  #album-pages{
+    background-color: rgba(244,244,244,.4);
+    bottom: 0;
+    float: right;
     padding: 10px;
+  }
+
+  img{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  a{
+    color: rgba(255, 154, 0, 1);
+    text-decoration: none;
+  }
+
+  .navbar {
+    background-color: rgba(254,254,254,.6);
+    padding: 5px;
 
     a{
-      color: rgba(200,100,155,1);
+      color: rgba(255,154,0,1);
       text-decoration: none;
+    }
+
+    a:hover{
+      color: rgba(255, 200, 0, 1);
     }
 
     ul li{
@@ -26,6 +64,7 @@ body{
       a{
         color: #ED8F0C;
       }
+      color: #ED8F0C;
       float: right;
       margin-top: -20px;
     }
@@ -38,7 +77,15 @@ body{
 
   .main {
     background-color: rgba(244,244,244,.4);
+    padding: 10px;
 
+    a:visited{
+      color: rgba(255, 100, 0, 1);
+    }
+
+    ul li{
+      list-style: none;
+    }
     .story{
       margin: 0 auto;
     }

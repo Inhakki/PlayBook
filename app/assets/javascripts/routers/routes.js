@@ -7,7 +7,7 @@ define(function(require){
 
   var PagesRouter = Backbone.Router.extend({
     routes: {
-      '#add' : 'pageAdder',
+      // '#add' : 'pageAdder',
       ':id' : 'page',
       '*default' : 'titlePage'
     },

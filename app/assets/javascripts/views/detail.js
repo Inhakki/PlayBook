@@ -9,9 +9,14 @@ define(function(require){
   var PageDetailView = Backbone.View.extend({
     template: _.template( templateText ),
 
+    events:{
+      'click' : 'render'
+    },
+
     render: function(){
-      var $wrapper = $('#wrapper');
+      console.log("tubular is rendered");
       var url = this.model.get('video_url');
+      var $wrapper = $('#wrapper');
       $wrapper.tubular({
         videoId: url
       });
@@ -21,7 +26,7 @@ define(function(require){
 
     initialize: function(){
       console.log('init works');
-      // this.render();
+      this.render();
     }
   });
 
