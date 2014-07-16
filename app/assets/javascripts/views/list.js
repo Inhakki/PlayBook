@@ -15,7 +15,7 @@ define(function(require){
     render: function(){
       this.$el.html('<a href="#' + this.model.get('id') + '">' + '&times' + '</a>');
       if( !this.model.get(parseInt('id') + 1) ){
-        this.$el.append('<a href="#add"> + </li>');
+        this.$el.append('<a href="#add"> + </a>');
       }
     }
   });

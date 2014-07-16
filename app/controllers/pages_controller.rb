@@ -12,8 +12,13 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.new(page_params)
-    redirect_to @album
+    @page = Page.create(page_params)
+    @page.album_id = params["album_id"]
+    if @page.save
+      redirect_to @page
+    else
+      redirect_to @album
+    end
   end
 
   def show
@@ -33,7 +38,7 @@ class PagesController < ApplicationController
   end
 
   def page_params
-    params.require(:page).permit(:title, :story, :video_url, :audio_url, :album_id)
+    params.require(:page).permit(:title, :story, :video_url, :audio_url)
   end
 
 end
