@@ -5,6 +5,12 @@ shim:
   jquery_ujs:
     deps: ["jquery"]
     exports: "$"
+  jquery_tubular:
+    deps: ["jquery", "jquery_ui"]
+    exports: "$"
+  jquery_ui:
+    deps: ["jquery"]
+    exports: "$"
 
 modules:
-  - name: "PlayBook/main"
+  - name: "main"
