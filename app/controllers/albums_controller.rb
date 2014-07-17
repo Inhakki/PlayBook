@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = Album.all
-    @img_select = ['pulpfiction.gif', 'coffeeshop.gif', 'strangelove.gif', 'peek.gif'].sample
+    @img_select = ['pulpfiction.gif', 'coffeeshop.gif', 'strangelove.gif', 'peek.gif', 'lolita.gif'].sample
   end
 
   def new
