@@ -24,8 +24,12 @@ define(function(require){
     },
 
     titlePage: function(){
+      debugger
       id = pages.at(0).get('id');
-      this.navigate(id);
+
+      var page = pages.findWhere({ id: parseInt(id) });
+      this.view = new PageDetailView({ model: page });
+      this.view.render().appendTo('#page-detail');
     },
 
     pageAdder: function(){

@@ -10,9 +10,7 @@ define(function(require){
     template: _.template( templateText ),
 
     render: function(){
-      console.log("tubular is rendered");
       var url = this.model.get('video_url');
-      console.log(url);
       window.setTimeout( function(){
         player.loadVideoById({'videoId' : url})
       }, 2000);
