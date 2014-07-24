@@ -1,6 +1,5 @@
 define(function(require) {
 
-  console.log("album pages ready");
   var Backbone = require('backbone');
 
   var Page = Backbone.Model.extend({

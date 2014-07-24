@@ -24,7 +24,6 @@ define(function(require){
     },
 
     titlePage: function(){
-      debugger
       id = pages.at(0).get('id');
 
       var page = pages.findWhere({ id: parseInt(id) });
