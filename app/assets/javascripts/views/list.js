@@ -14,7 +14,7 @@ define(function(require){
 
     render: function(){
       this.$el.html('<a href="#' + this.model.get('id') + '">' + '&times' + '</a>');
-      // if( !this.model.get(parseInt('id') + 1) ){
+      // if( !(this.model.get(parseInt('id') + 1)) ){
       //   this.$el.append('<a href="#add"> + </a>');
       // }
     }
@@ -41,6 +41,10 @@ define(function(require){
           item.render();
           list.appendChild(item.el);
         });
+        var adder = document.createElement('a');
+        adder.setAttribute('href', '#add');
+        adder.innerHTML = "+";
+        list.appendChild(adder);
       }
 
       return this.$el.html(list);

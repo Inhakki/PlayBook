@@ -4,10 +4,11 @@ define(function(require){
   var Backbone = require('backbone');
   var pages = require('../models/albumpages');
   var PageDetailView = require('../views/detail');
+  var AddPageView = require('../views/addpage');
 
   var PagesRouter = Backbone.Router.extend({
     routes: {
-      // '#add' : 'pageAdder',
+      'add' : 'pageAdder',
       ':id' : 'page',
       '*default' : 'titlePage'
     },
@@ -33,7 +34,7 @@ define(function(require){
 
     pageAdder: function(){
       this.view = new AddPageView({collection: pages});
-      this.view.render().appendTo('#page-detail');
+      this.view.render().appendTo('#page-add');
     }
   });
 
