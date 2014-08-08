@@ -32,7 +32,12 @@ define(function(require){
       this.view.render().appendTo('#page-detail');
     },
 
+    // function that runs when the plus sign is clicked to add a page.
     pageAdder: function(){
+      if(this.view){
+        this.view.remove();
+      }
+
       this.view = new AddPageView({collection: pages});
       this.view.render().appendTo('#page-add');
     }

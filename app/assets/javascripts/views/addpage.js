@@ -1,6 +1,6 @@
 define(function(require){
 
-  console.log("addpage view loaded!");
+  //requires:
   var Backbone = require('backbone');
   var _ = require('underscore');
   var templateText = require('text!../templates/addpage.html')
@@ -9,7 +9,6 @@ define(function(require){
     template: _.template(templateText),
 
     render: function(){
-      console.log("rendering add page view")
       var rendered = this.template;
       return this.$el.html(rendered);
     },

@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def index
     @pages = @album.pages.all
 
+    #This part of the code renders
     if @pages
       render json: @pages
     else

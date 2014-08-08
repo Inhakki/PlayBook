@@ -2,7 +2,10 @@ class AlbumsController < ApplicationController
   before_action :find_user, only: [:new, :create]
 
   def index
+    # makes all Albums available to be grabbed by the view.
     @albums = Album.all
+
+    # This controls the background of the landing page.
     @img_select = ['pulpfiction.gif', 'coffeeshop.gif', 'strangelove.gif', 'peek.gif', 'lolita.gif'].sample
   end
 

@@ -12,11 +12,9 @@ define(function(require){
       this.render();
     },
 
+    //adds the actual times symbol to the list element
     render: function(){
       this.$el.html('<a href="#' + this.model.get('id') + '">' + '&times' + '</a>');
-      // if( !(this.model.get(parseInt('id') + 1)) ){
-      //   this.$el.append('<a href="#add"> + </a>');
-      // }
     }
   });
 
@@ -29,8 +27,12 @@ define(function(require){
     },
 
     render: function(){
+      //createDocumentFragment is super useful. Prevents
+      //reflow and is causing better performance.
       var list = document.createDocumentFragment();
 
+      //This lists all the collection as "pages" using the times
+      //symbol, so the user can navigate through pages.
       if(this.collection.length <= 0){
         var item = new AddPageView({collection: this.collection});
         item.render();
@@ -41,6 +43,9 @@ define(function(require){
           item.render();
           list.appendChild(item.el);
         });
+
+        //adds a plus sign to the end of the page list, allowing
+        //the user to put in additional pages.
         var adder = document.createElement('a');
         adder.setAttribute('href', '#add');
         adder.innerHTML = "+";

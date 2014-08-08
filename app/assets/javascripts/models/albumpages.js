@@ -13,6 +13,8 @@ define(function(require) {
   var Pages = Backbone.Collection.extend({
     model: Page,
     url: function() {
+      // Kind of a cool way to locate the specific album that is needed.
+      // pages is then appended to the end of whatever album it returns.
       return window.location.pathname + "/pages";
     }
   });
