@@ -10,7 +10,7 @@ define(function(require){
     template: _.template( templateText ),
 
     render: function(){
-      var url = this.model.get('video_url')
+      var url = this.model.get('video_url');
       // .done(function(){
       //   player.loadVideoById({'videoId' : url});
       // });
